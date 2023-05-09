@@ -73,4 +73,13 @@ public class WaterService {
     public void setCityMain(boolean cityMain) {
         CityMain = cityMain;
     }
+
+    public boolean hasData(){
+        if(Size > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
