@@ -1,3 +1,4 @@
+package classes;
 public class CustomerInfo {
     private String CustomerName;
     private int Date;
@@ -50,7 +51,7 @@ public class CustomerInfo {
         return BillingAddress;
     }
 
-    public void setBilling_Address(String billingAddress) {
+    public void setBillingAddress(String billingAddress) {
         BillingAddress = billingAddress;
     }
 }

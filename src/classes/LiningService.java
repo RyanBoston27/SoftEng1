@@ -37,4 +37,13 @@ public class LiningService {
     public void setTransitionLiner(int transitionLiner) {
         TransitionLiner = transitionLiner;
     }
+
+    public boolean hasData(){
+        if(Size > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
