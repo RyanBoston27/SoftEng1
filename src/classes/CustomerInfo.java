@@ -1,25 +1,35 @@
 package classes;
 public class CustomerInfo {
-    private String CustomerName;
-    private int Date;
+    private String FirstName;
+    private String LastName;
+    private String Date;
     private String Email;
-    private int Phone;
+    private String Phone;
     private String JobAddress;
     private String BillingAddress;
 
-    public String getCustomerName() {
-        return CustomerName;
+    public String getFirstName() {
+        return FirstName;
     }
 
-    public void setCustomerName(String customerName) {
-        CustomerName = customerName;
+    public String getLastName() {
+        return LastName;
     }
 
-    public int getDate() {
+
+    public void setFirstName(String firstName) {
+        FirstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        LastName = lastName;
+    }
+
+    public String getDate() {
         return Date;
     }
 
-    public void setDate(int date) {
+    public void setDate(String date) {
         Date = date;
     }
 
@@ -31,11 +41,11 @@ public class CustomerInfo {
         Email = email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return Phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         Phone = phone;
     }
 
