@@ -41,7 +41,7 @@ class LandingPageGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Add your code for Search Clients here
-                new SearchClientGUI();
+                new SearchClientGUI();    
                 frame.dispose();
             }
         });
