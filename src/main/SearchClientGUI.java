@@ -34,8 +34,9 @@ public class SearchClientGUI extends JFrame {
         display();
     }
 
-    public void display() {
-        frame.pack();
+    private void display() {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        frame.setSize(screenSize.width / 2, screenSize.height / 2); // Set the frame size to be half the screen size
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }

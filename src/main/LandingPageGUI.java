@@ -14,8 +14,6 @@ class LandingPageGUI {
         // Creating a navigation bar
         JPanel navBar = new JPanel(new FlowLayout(FlowLayout.LEFT));
         navBar.add(new JLabel(new ImageIcon("images/MBlogo.png")));
-        JButton homeButton = new JButton("Home");
-        navBar.add(homeButton);
         panel.add(navBar, BorderLayout.NORTH);
 
         // Creating the main container
