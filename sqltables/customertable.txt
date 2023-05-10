@@ -1,0 +1,14 @@
+Schema for Customer info uncluding documents:
+
+CREATE TABLE Customers (
+    firstName VARCHAR(50),
+    lastName VARCHAR(50),
+    fullName AS (CONCAT(firstName, ' ', lastName)),
+    dateEntered DATE,
+    phoneNumber VARCHAR(15),
+    emailAddress VARCHAR(100),
+    jobSiteAddress VARCHAR(255) PRIMARY KEY,
+    billingAddress VARCHAR(255),
+    bidSheet BLOB,
+    proposalDoc BLOB
+);
