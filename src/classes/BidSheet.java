@@ -7,11 +7,12 @@ public class BidSheet {
     private WaterService waterService;
     private SewerService sewerService;
     private LiningService liningService;
-    private boolean furnishPermits;
-    private boolean breakUpFloor;
-    private boolean recementFloor;
-    private boolean trafficControl;
-    private String explain; 
+    private boolean furnishPermits = false;
+    private boolean breakUpFloor = false;
+    private boolean recementFloor = false;
+    private boolean trafficControl = false;
+    private String explain = ""; 
+    private String remarks = "";
 
     // Default constructor
     public BidSheet() {
@@ -58,40 +59,48 @@ public class BidSheet {
         return this.explain;
     }
 
+    public String getRemarks() {
+        return this.remarks;
+    }
+
     // Setters
-    public void setCustomerInfo(CustomerInfo customerInfo) {
-        this.customerInfo = customerInfo;
+    public void setCustomerInfo(CustomerInfo CustomerInfo) {
+        this.customerInfo = CustomerInfo;
     }
 
-    public void setWaterService(WaterService waterService) {
-        this.waterService = waterService;
+    public void setWaterService(WaterService WaterService) {
+        this.waterService = WaterService;
     }
 
-    public void setSewerService(SewerService sewerService) {
-        this.sewerService = sewerService;
+    public void setSewerService(SewerService SewerService) {
+        this.sewerService = SewerService;
     }
 
-    public void setLiningService(LiningService liningService) {
-        this.liningService = liningService;
+    public void setLiningService(LiningService LiningService) {
+        this.liningService = LiningService;
     }
 
-    public void setFurnishPermits(boolean furnishPermits) {
-        this.furnishPermits = furnishPermits;
+    public void setFurnishPermits(boolean FurnishPermits) {
+        this.furnishPermits = FurnishPermits;
     }
     
-    public void setBreakUpFloor(boolean breakUpFloor) {
-        this.breakUpFloor = breakUpFloor;
+    public void setBreakUpFloor(boolean BreakUpFloor) {
+        this.breakUpFloor = BreakUpFloor;
     }
     
-    public void setRecementFloor(boolean recementFloor) {
-        this.recementFloor = recementFloor;
+    public void setRecementFloor(boolean RecementFloor) {
+        this.recementFloor = RecementFloor;
     }
     
-    public void setTrafficControl(boolean trafficControl) {
-        this.trafficControl = trafficControl;
+    public void setTrafficControl(boolean TrafficControl) {
+        this.trafficControl = TrafficControl;
     }
     
-    public void setExplain(String explain) {
-        this.explain = explain;
+    public void setExplain(String Explain) {
+        this.explain = Explain;
+    }
+
+    public void setRemarks(String Remarks) {
+        this.remarks = Remarks;
     }
 }
