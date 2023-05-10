@@ -1,0 +1,9 @@
+account creation table:
+
+create table loginInfo(
+
+username varchar(50),
+password varchar(50),
+primary key (username)
+
+);
