@@ -69,7 +69,7 @@ public class BidSheetGUI {
 		frame.getContentPane().add(lblCusName);
 		
 		JLabel lblDate = new JLabel("Date:");
-		lblDate.setBounds(295, 6, 27, 14);
+		lblDate.setBounds(288, 6, 34, 14);
 		frame.getContentPane().add(lblDate);
 		
 		JLabel lblEmail = new JLabel("Email:");
@@ -187,7 +187,7 @@ public class BidSheetGUI {
 		frame.getContentPane().add(lblApproxFt3);
 		
 		JLabel lblExcavate = new JLabel("Excavate:  ");
-		lblExcavate.setBounds(243, 265, 59, 14);
+		lblExcavate.setBounds(233, 265, 59, 14);
 		frame.getContentPane().add(lblExcavate);
 		
 		JLabel lblTranLiner = new JLabel("Transition Liner:");
@@ -196,22 +196,22 @@ public class BidSheetGUI {
 		frame.getContentPane().add(lblTranLiner);
 		
 		JLabel lblFurnish = new JLabel("4. Furnish permits:");
-		lblFurnish.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblFurnish.setBounds(0, 292, 93, 14);
+		lblFurnish.setHorizontalAlignment(SwingConstants.LEFT);
+		lblFurnish.setBounds(0, 295, 115, 14);
 		frame.getContentPane().add(lblFurnish);
 		
 		JLabel lblBreakUp = new JLabel("5.  Break-up floor:");
-		lblBreakUp.setBounds(6, 317, 99, 14);
+		lblBreakUp.setBounds(6, 320, 109, 14);
 		frame.getContentPane().add(lblBreakUp);
 		
 		JLabel lblRecement = new JLabel("6. Recement floor: ");
-		lblRecement.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblRecement.setBounds(0, 345, 99, 14);
+		lblRecement.setHorizontalAlignment(SwingConstants.LEFT);
+		lblRecement.setBounds(6, 345, 115, 14);
 		frame.getContentPane().add(lblRecement);
 		
 		JLabel lblTraffic = new JLabel("7. Traffic Control:");
-		lblTraffic.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblTraffic.setBounds(-7, 370, 99, 14);
+		lblTraffic.setHorizontalAlignment(SwingConstants.LEFT);
+		lblTraffic.setBounds(6, 370, 109, 14);
 		frame.getContentPane().add(lblTraffic);
 		
 		JTextArea textArea = new JTextArea();
@@ -227,7 +227,7 @@ public class BidSheetGUI {
 		frame.getContentPane().add(separator3);
 		
 		JLabel lblExplain = new JLabel("Explain:");
-		lblExplain.setBounds(253, 290, 46, 14);
+		lblExplain.setBounds(243, 290, 46, 14);
 		frame.getContentPane().add(lblExplain);
 		
 		txtName = new JTextField();
@@ -261,7 +261,7 @@ public class BidSheetGUI {
 		txtBillAdd.setColumns(10);
 		
 		JRadioButton rdbtn34 = new JRadioButton("3/4\"");
-		rdbtn34.setBounds(159, 114, 46, 14);
+		rdbtn34.setBounds(159, 114, 56, 14);
 		frame.getContentPane().add(rdbtn34);
 		
 		JRadioButton rdbtn1 = new JRadioButton("1\"");
@@ -291,7 +291,7 @@ public class BidSheetGUI {
 		frame.getContentPane().add(chckDrop);
 		
 		txtAddFt = new JTextField();
-		txtAddFt.setBounds(362, 136, 86, 20);
+		txtAddFt.setBounds(374, 137, 86, 20);
 		frame.getContentPane().add(txtAddFt);
 		txtAddFt.setColumns(10);
 		
@@ -316,7 +316,7 @@ public class BidSheetGUI {
 		frame.getContentPane().add(chckRece);
 		
 		JCheckBox chckTraffic = new JCheckBox("");
-		chckTraffic.setBounds(117, 370, 22, 23);
+		chckTraffic.setBounds(117, 366, 22, 23);
 		frame.getContentPane().add(chckTraffic);
 		
 		JRadioButton rdbtn4 = new JRadioButton("4\"");
@@ -352,7 +352,7 @@ public class BidSheetGUI {
 		frame.getContentPane().add(chckTranLine2);
 		
 		txtAppFt = new JTextField();
-		txtAppFt.setBounds(295, 237, 129, 20);
+		txtAppFt.setBounds(331, 237, 129, 20);
 		frame.getContentPane().add(txtAppFt);
 		txtAppFt.setColumns(10);
 		
