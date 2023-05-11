@@ -1,12 +1,8 @@
-package oneLastTry;
+package main;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
-import com.jgoodies.forms.layout.FormSpecs;
 import javax.swing.JLabel;
 import javax.swing.JSeparator;
 import javax.swing.JTextArea;
@@ -35,30 +31,13 @@ public class BidSheetGUI {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					BidSheetGUI window = new BidSheetGUI();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
 	/**
 	 * Create the application.
-	 */
-	public BidSheetGUI() {
-		initialize();
-	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public BidSheetGUI() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 486, 611);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

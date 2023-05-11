@@ -1,5 +1,6 @@
 package main;
 import classes.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -129,7 +130,7 @@ class CreateClientGUI {
         
                     System.out.println("Client created");
                     // After creating the client, you could navigate to another page, for example:
-                    new LandingPageGUI();
+                    new BidSheetGUI();
                     frame.dispose();
                 }
             }
