@@ -12,7 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JToggleButton;
 import javax.swing.JTextField;
 
-public class PleaseGod {
+public class BidSheetGUI {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -24,7 +24,7 @@ public class PleaseGod {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PleaseGod window = new PleaseGod();
+					BidSheetGUI window = new BidSheetGUI();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +36,7 @@ public class PleaseGod {
 	/**
 	 * Create the application.
 	 */
-	public PleaseGod() {
+	public BidSheetGUI() {
 		initialize();
 	}
 

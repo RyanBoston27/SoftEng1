@@ -1,0 +1,84 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{marvosym}
+
+% Margins
+\geometry{
+    top=1in,
+    bottom=1in,
+    left=1in,
+    right=1in
+}
+
+% Column Widths
+\title{\textbf{M\&B SERVICES, INC.}\\
+    \large 27498 Olinda Trail \\
+    Lindstrom, MN 55045 \\
+    \Telefon\ 651-900-9704 / \fax\ 612-460-9370 \\
+    \hfill \break 
+    \textbf{REQUEST FOR SERVICES}}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Client Information}
+
+\begin{tabularx}{\textwidth}{p{100px} X}
+    \textbf{Name} & !CNAME! \\
+    \textbf{Date} & \today \\
+    \textbf{Phone Number} & !CPHONE! \\
+    \textbf{Email} & !CEMAIL! \\
+    \textbf{Job Site Address} & !CJSADDRESS! \\
+    \textbf{Billing Address} & !CBADDRESS! \\
+\end{tabularx}
+
+\section*{Service Information}
+
+\subsection*{Water Service}
+\begin{tabularx}{\textwidth}{p{100px} X}
+    \textbf{Size} & !WSSIZE! \\
+    \textbf{Approximate Feet} & !WSFEET! \\
+    \textbf{Drop} & !WSDROP! \\
+    \textbf{Back Flow} & !WSBACKFLOW! \\
+    \textbf{Horizontal Feet} & !WSHFEET! \\
+    \textbf{Property Line} & !WSLINE! \\
+    \textbf{Bvld} & !WSBVLD! \\
+    \textbf{City Main} & !WSMAIN! \\
+\end{tabularx}
+
+\subsection*{Sewer Service}
+\begin{tabularx}{\textwidth}{p{100px} X}
+    \textbf{Size} & !SSSIZE! \\
+    \textbf{Property Line} & !SSLINE! \\
+    \textbf{Bvld} & !SSBVLD! \\
+    \textbf{City Main} & !SSMAIN! \\
+\end{tabularx}
+
+\subsection*{Lining Service}
+\begin{tabularx}{\textwidth}{p{100px} X}
+    \textbf{Size} & !LSSIZE! \\
+    \textbf{Approximate Feet} & !LSFEET! \\
+    \textbf{Excavate} & !LSX! \\
+    \textbf{Transition Liner} & !LSLINER! \\
+\end{tabularx}
+
+\subsection*{Other}
+\begin{tabularx}{\textwidth}{p{100px} X}
+    \textbf{Furnish Permits} & !PERMITS! \\
+    \textbf{Break Up Floor} & !BREAKFLOOR! \\
+    \textbf{Recement Floor} & !CEMENTFLOOR! \\
+    \textbf{Traffic Control} & !TRAFFIC! \\
+\end{tabularx}
+
+\section*{Comments}
+!COMMENTS!
+
+\end{document}
+
