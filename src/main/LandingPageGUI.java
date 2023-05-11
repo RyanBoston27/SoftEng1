@@ -20,8 +20,10 @@ class LandingPageGUI {
         JPanel container = new JPanel(new GridLayout(1, 2));
         JButton createClientButton = new JButton("Create Client");
         JButton searchClientsButton = new JButton("Search Clients");
+        JButton emailProposalButton = new JButton("Email Proposal");
         container.add(createClientButton);
         container.add(searchClientsButton);
+        container.add(emailProposalButton);
         panel.add(container, BorderLayout.CENTER);
 
         // Event listener for Create Client button
@@ -40,6 +42,16 @@ class LandingPageGUI {
             public void actionPerformed(ActionEvent e) {
                 // Add your code for Search Clients here
                 new SearchClientGUI();    
+                frame.dispose();
+            }
+        });
+
+        // Event listener for Search Clients button
+        emailProposalButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Add your code for Search Clients here
+                new EmailProposalGUI();    
                 frame.dispose();
             }
         });
