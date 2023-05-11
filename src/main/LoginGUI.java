@@ -26,15 +26,19 @@ public class LoginGUI {
         rightPanel.add(welcomeLabel);
         rightPanel.add(instructionLabel);
 
+        JPanel usernamePanel = new JPanel();
         JLabel usernameLabel = new JLabel("Email");
-        JTextField usernameField = new JTextField(20);
-        rightPanel.add(usernameLabel);
-        rightPanel.add(usernameField);
+        JTextField usernameField = new JTextField(10);
+        usernamePanel.add(usernameLabel);
+        usernamePanel.add(usernameField);
+        rightPanel.add(usernamePanel);
 
+        JPanel passwordPanel = new JPanel();
         JLabel passwordLabel = new JLabel("Password");
-        JPasswordField passwordField = new JPasswordField(20);
-        rightPanel.add(passwordLabel);
-        rightPanel.add(passwordField);
+        JPasswordField passwordField = new JPasswordField(10);
+        passwordPanel.add(passwordLabel);
+        passwordPanel.add(passwordField);
+        rightPanel.add(passwordPanel);
 
         JButton loginButton = new JButton("Log In");
         rightPanel.add(loginButton);

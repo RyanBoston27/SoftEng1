@@ -129,7 +129,7 @@ class CreateClientGUI {
         
                     System.out.println("Client created");
                     // After creating the client, you could navigate to another page, for example:
-                    new LandingPageGUI();
+                    new BidSheetGUI();
                     frame.dispose();
                 }
             }
