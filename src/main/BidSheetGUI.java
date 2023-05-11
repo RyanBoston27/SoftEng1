@@ -77,7 +77,7 @@ public class BidSheetGUI {
 		frame.getContentPane().add(lblEmail);
 		
 		JLabel lblNewLabel_4 = new JLabel("Phone:");
-		lblNewLabel_4.setBounds(288, 26, 34, 14);
+		lblNewLabel_4.setBounds(288, 26, 55, 14);
 		frame.getContentPane().add(lblNewLabel_4);
 		
 		JLabel lblJobAdd = new JLabel("Job Site Address:");
