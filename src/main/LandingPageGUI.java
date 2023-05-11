@@ -29,7 +29,7 @@ class LandingPageGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Add your code for Create Client here
-                new BidSheetGUI();
+                new CreateClientGUI();
                 frame.dispose();
             }
         });
