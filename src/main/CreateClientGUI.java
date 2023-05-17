@@ -130,7 +130,15 @@ class CreateClientGUI {
         
                     System.out.println("Client created");
                     // After creating the client, you could navigate to another page, for example:
-                    new BidSheetGUI();
+                    try {
+                        SwingUtilities.invokeLater(new Runnable() {
+                            public void run() {
+                                new BidSheetGUI().setVisible(true);
+                            }
+                        });
+                    } catch (Exception r) {
+                        r.printStackTrace();
+                    }
                     frame.dispose();
                 }
             }

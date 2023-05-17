@@ -4,18 +4,19 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.*;
+import java.awt.*;
 import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
-import java.awt.Font;
 import javax.swing.JRadioButton;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class BidSheetGUI {
+public class BidSheetGUI extends JFrame {
 
 	private JFrame frame;
 	private JLabel lblPropertyLine2;
@@ -40,8 +41,9 @@ public class BidSheetGUI {
 	public BidSheetGUI() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 486, 611);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		this.setSize(300, 200);
 		
 		JLabel lblCusName = new JLabel("Customer Name:  ");
 		lblCusName.setBounds(6, 6, 86, 14);
