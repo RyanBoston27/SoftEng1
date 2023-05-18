@@ -11,6 +11,7 @@ public class BidSheetGUI extends JFrame {
     private LiningService liningService;
     private SewerService sewerSerice;
     private WaterService waterService;
+    private BidSheet sheet;
 
     // Checkboxes
     private JCheckBox waterServiceCheckBox, sewerServiceCheckBox, liningServiceCheckBox;
@@ -33,13 +34,18 @@ public class BidSheetGUI extends JFrame {
 
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(800, 600); 
+        setSize(800, 800); 
         setTitle("Bid Sheet for " + customerInfo.getFirstName());
 
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS)); 
 
         JLabel customerNameLabel = new JLabel("Customer Name: " + customerInfo.getFirstName());
         add(customerNameLabel);
+        
+        //I cant get this button to display
+        JButton createBidSheetButton = new JButton("Create BidSheet");
+        add(createBidSheetButton);
+        //idk why
 
         waterServiceCheckBox = new JCheckBox("Water Service");
         sewerServiceCheckBox = new JCheckBox("Sewer Service");
@@ -197,7 +203,8 @@ public class BidSheetGUI extends JFrame {
             trafficControlExplanationField.setEditable(isSelected);
         });
 
-        JButton createBidSheetButton = new JButton("Create BidSheet");
+        pack();
+        setLocationRelativeTo(null); 
         createBidSheetButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -224,8 +231,7 @@ public class BidSheetGUI extends JFrame {
                liningService.setExcavate(excavateCheckBox.isSelected());
                liningService.setTransitionLiner(transitionLinerField.getText());
                
-                //set bidsheet class
-                BidSheet sheet = new BidSheet();  
+                //set bidsheet class  
                 sheet.setCustomerInfo(inputCustomerInfo);
                 sheet.setWaterService(waterService);
                 sheet.setSewerService(sewerSerice);
@@ -239,13 +245,14 @@ public class BidSheetGUI extends JFrame {
                 sheet.setExplain(trafficControlExplanationField.getText());
                 sheet.setRemarks(remarksArea.getText());
 
+                sheet.getLiningService().getSize();
+
                 //ADD CALL TO FUNCTION HERE AFTER FUNCTION IS CALLED, PROPOSAL DOC WILL OPEN
 
 
                 try {
                     SwingUtilities.invokeLater(new Runnable() {
                         public void run() {
-                            System.out.println("pop");
                             new ProposalDocGUI().setVisible(true);
                         }
                     });
