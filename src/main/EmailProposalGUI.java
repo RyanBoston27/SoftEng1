@@ -2,6 +2,8 @@ package main;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.*;
 import java.util.Vector;
 
@@ -28,6 +30,18 @@ public class EmailProposalGUI extends JFrame {
 
         frame.add(searchPanel, BorderLayout.NORTH);
         frame.add(new JScrollPane(resultsTable), BorderLayout.CENTER);
+
+        JButton homeButton = new JButton("Home");
+        searchPanel.add(homeButton);
+
+        homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Add your code for Create Client here
+                new LandingPageGUI();
+                frame.dispose();
+            }
+        });
 
         searchButton.addActionListener(e -> searchClients());
 

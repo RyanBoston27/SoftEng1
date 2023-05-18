@@ -98,6 +98,18 @@ class CreateClientGUI {
         JButton createButton = new JButton("Create Client");
         panel.add(createButton);
 
+        JButton homeButton = new JButton("Home");
+        panel.add(homeButton);
+
+        homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Add your code for Create Client here
+                new LandingPageGUI();
+                frame.dispose();
+            }
+        });
+
         createButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
