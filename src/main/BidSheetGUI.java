@@ -5,8 +5,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
+import java.io.File;
+import java.io.FileInputStream;
 //import java.io.IOException;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 public class BidSheetGUI extends JFrame {
     private CustomerInfo customerInfo;
@@ -260,6 +265,35 @@ public class BidSheetGUI extends JFrame {
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 } 
+
+                //enter into database
+                String URL = "jdbc:mysql://wayne.cs.uwec.edu/cs355g2";
+                String USERNAME = "CS355G2";
+                String PASSWORD = "SFM2BKLT";
+
+
+                String filePath = "src/main/latexOutput/" + sheet.getCustomerInfo().getEmail()+ ".pdf";
+
+                try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+                    PreparedStatement statement = connection.prepareStatement("UPDATE customers SET bidSheet = ? WHERE emailAddress = ?")) {
+
+                    File pdfFile = new File(filePath);
+                    FileInputStream inputStream = new FileInputStream(pdfFile);
+                    byte[] fileData = new byte[(int) pdfFile.length()];
+                    inputStream.read(fileData);
+
+                    String email = sheet.getCustomerInfo().getEmail();
+
+                    statement.setBytes(1, fileData);
+                    statement.setString(2, email);
+                    statement.executeUpdate();
+
+                    inputStream.close();
+                    System.out.println("PDF file uploaded successfully.");
+
+                } catch (Exception e2) {
+                    e2.printStackTrace();
+                }
 
                 dispose();
                 try {

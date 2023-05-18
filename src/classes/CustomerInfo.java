@@ -1,12 +1,12 @@
 package classes;
 public class CustomerInfo {
-    private String FirstName;
-    private String LastName;
-    private String Date;
-    private String Email;
-    private String Phone;
-    private String JobAddress;
-    private String BillingAddress;
+    private String FirstName ="";
+    private String LastName = "";
+    private String Date ="";
+    private String Email="";
+    private String Phone="";
+    private String JobAddress="";
+    private String BillingAddress="";
 
     public CustomerInfo() { }
 

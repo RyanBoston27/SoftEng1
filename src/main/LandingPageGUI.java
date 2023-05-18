@@ -1,5 +1,8 @@
 package main;
 import javax.swing.*;
+
+import classes.BidSheet;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,7 +23,7 @@ class LandingPageGUI {
         JPanel container = new JPanel(new GridLayout(1, 2));
         JButton createClientButton = new JButton("Create Client");
         JButton searchClientsButton = new JButton("Search Clients");
-        JButton emailProposalButton = new JButton("Email Proposal");
+        JButton emailProposalButton = new JButton("Proposal");
         container.add(createClientButton);
         container.add(searchClientsButton);
         container.add(emailProposalButton);
@@ -50,8 +53,8 @@ class LandingPageGUI {
         emailProposalButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Add your code for Search Clients here
-                new EmailProposalGUI();    
+                BidSheet sheet = new BidSheet();
+                new ProposalDocGUI(sheet).setVisible(true);;    
                 frame.dispose();
             }
         });
