@@ -121,8 +121,8 @@ public void bidSheetCreate() throws IOException {
 
 public static int latexToPDF(String latexFilePath) {
     try {
-
-        ProcessBuilder builder = new ProcessBuilder("C:/Users/ryanb/AppData/Local/Programs/MiKTeX/miktex/bin/x64/pdflatex.exe", Paths.get(latexFilePath).getFileName().toString());
+        String pdfLatexPath = System.getenv("APPDATA").replace("\\", "/").replace("Roaming", "") + "/Local/Programs/MiKTeX/miktex/bin/x64/pdflatex.exe";
+        ProcessBuilder builder = new ProcessBuilder(pdfLatexPath, Paths.get(latexFilePath).getFileName().toString());
         builder.directory(new File(Paths.get(latexFilePath).getParent().toString()));
         Process process = builder.start();
         return process.waitFor(); // Wait for the command to finish and return the exit code

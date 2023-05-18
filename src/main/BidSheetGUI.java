@@ -265,7 +265,7 @@ public class BidSheetGUI extends JFrame {
                 try {
                     SwingUtilities.invokeLater(new Runnable() {
                         public void run() {
-                            //new ProposalDocGUI(sheet).setVisible(true);
+                            new ProposalDocGUI(sheet).setVisible(true);
                         }
                     });
                 } catch (Exception r) {

@@ -4,6 +4,7 @@ import classes.BidSheet;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 
 public class ProposalDocGUI extends JFrame {
 
@@ -78,7 +79,16 @@ public class ProposalDocGUI extends JFrame {
                 sCost = sewerCostField.getText();
                 lDesc = liningDescriptionField.getText();
                 lCost = liningCostField.getText();
-
+                System.out.println(wDesc);
+                if(wCost.isEmpty()){
+                    wCost = "0";
+                }
+                if(sCost.isEmpty()){
+                    sCost = "0";
+                }
+                if(lCost.isEmpty()){
+                    lCost = "0";
+                }
                 int wCostVal = Integer.parseInt(wCost);
                 int sCostVal = Integer.parseInt(sCost);
                 int lCostVal = Integer.parseInt(lCost);
@@ -86,12 +96,25 @@ public class ProposalDocGUI extends JFrame {
 
                 totalCost = String.valueOf(total);
 
-                new proposalCreate(String wDesc, String wCost, String sDesc, String sCost, String lDesc, String lCost, String totalCost, BidSheet sheet);
-
-                // Close current frame
+                String texFilePath = "./src/main/latex/proposal.tex";
+        
+                try {
+                    new ProposalDocGenerate(texFilePath, sheet, wDesc, wCost, sDesc, sCost, lDesc, lCost, totalCost);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
                 dispose();
+                // Close current frame
                 // Open LandingPageGUI
-                new LandingPageGUI(); // Assuming LandingPageGUI has a default constructor
+                try {
+                    SwingUtilities.invokeLater(new Runnable() {
+                        public void run() {
+                            new LandingPageGUI();
+                        }
+                    });
+                } catch (Exception r) {
+                    r.printStackTrace();
+                }
             }
         });
         add(createProposalButton);
