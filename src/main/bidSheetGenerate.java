@@ -1,26 +1,33 @@
 package main;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
+import java.io.File;
+//import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Paths;
 
 import classes.BidSheet;
 
 public class bidSheetGenerate{
 
-public bidSheetGenerate(){
-    
+    BidSheet sheet = new BidSheet();
+    String texFilePath;
+
+public bidSheetGenerate(String TexFilePath, BidSheet Sheet) throws IOException{
+    this.sheet = Sheet;
+    this.texFilePath = TexFilePath;
+    bidSheetCreate();
 }
 
-public void bidSheetCreate(String texFilePath, BidSheet sheet) throws IOException {
+public void bidSheetCreate() throws IOException {
     
     // Read LaTeX Template File
     BufferedReader reader = new BufferedReader(new FileReader(texFilePath));
 
     // Where To Save Generated LaTeX File
-    String newFilePath;
+    String newFilePath =  Paths.get(texFilePath).getParent().toString()+ "Output/" + sheet.getCustomerInfo().getEmail() + ".pdf";
     
     // Handle Lines & Strings
     StringBuilder stringBuilder = new StringBuilder();
@@ -114,7 +121,10 @@ public void bidSheetCreate(String texFilePath, BidSheet sheet) throws IOExceptio
 
 public static int latexToPDF(String latexFilePath) {
     try {
-        Process process = Runtime.getRuntime().exec("pdflatex " + latexFilePath);
+
+        ProcessBuilder builder = new ProcessBuilder("C:/Users/ryanb/AppData/Local/Programs/MiKTeX/miktex/bin/x64/pdflatex.exe", Paths.get(latexFilePath).getFileName().toString());
+        builder.directory(new File(Paths.get(latexFilePath).getParent().toString()));
+        Process process = builder.start();
         return process.waitFor(); // Wait for the command to finish and return the exit code
     } catch (IOException | InterruptedException e) {
         e.printStackTrace();

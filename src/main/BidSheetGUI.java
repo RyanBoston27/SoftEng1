@@ -5,13 +5,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
+//import java.io.IOException;
+import java.io.IOException;
 
 public class BidSheetGUI extends JFrame {
     private CustomerInfo customerInfo;
-    private LiningService liningService;
-    private SewerService sewerService;
-    private WaterService waterService;
-    private BidSheet sheet;
+    private LiningService liningService = new LiningService();
+    private SewerService sewerService = new SewerService();
+    private WaterService waterService = new WaterService();
+    private BidSheet sheet = new BidSheet();
 
     // Checkboxes
     private JCheckBox waterServiceCheckBox, sewerServiceCheckBox, liningServiceCheckBox;
@@ -208,9 +210,11 @@ public class BidSheetGUI extends JFrame {
         createBidSheetButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-             
+                
                //setting water service classes
+               if(sizeFieldWater != null){
                waterService.setSize(sizeFieldWater.getText());
+               }
                waterService.setApproxFeet(approxFeetFieldWater.getText());
                waterService.setDrop(dropCheckBox.isSelected());
                waterService.setBackFlow(backFlowCheckBox.isSelected());
@@ -246,19 +250,28 @@ public class BidSheetGUI extends JFrame {
                 sheet.setRemarks(remarksArea.getText());
 
                 sheet.getLiningService().getSize();
+                
+                String texFilePath = "./src/main/latex/bid.tex";
+                
+                 
+                try {
+                    new bidSheetGenerate(texFilePath, sheet);
 
-                //ADD CALL TO REPLACE FUNCTION HERE
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                } 
 
-
+                dispose();
                 try {
                     SwingUtilities.invokeLater(new Runnable() {
                         public void run() {
-                            new ProposalDocGUI().setVisible(true);
+                            //new ProposalDocGUI(sheet).setVisible(true);
                         }
                     });
                 } catch (Exception r) {
                     r.printStackTrace();
                 }
+                
             }
         });
     }
