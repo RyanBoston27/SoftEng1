@@ -9,7 +9,7 @@ import java.awt.event.ItemEvent;
 public class BidSheetGUI extends JFrame {
     private CustomerInfo customerInfo;
     private LiningService liningService;
-    private SewerService sewerSerice;
+    private SewerService sewerService;
     private WaterService waterService;
     private BidSheet sheet;
 
@@ -220,10 +220,10 @@ public class BidSheetGUI extends JFrame {
                waterService.setCityMain(cityMainCheckBoxWater.isSelected());
                
                //setting sewer service classes
-               sewerSerice.setSize(sizeFieldSewer.getText());
-               sewerSerice.setApproxFeet(approxFeetFieldSewer.getText());
-               sewerSerice.setPropertyLine(propertyLineCheckBoxSewer.isSelected());
-               sewerSerice.setCityMain(cityMainCheckBoxSewer.isSelected());
+               sewerService.setSize(sizeFieldSewer.getText());
+               sewerService.setBlvd(propertyLineCheckBoxSewer.isSelected());
+               sewerService.setPropertyLine(propertyLineCheckBoxSewer.isSelected());
+               sewerService.setCityMain(cityMainCheckBoxSewer.isSelected());
 
                //setting lining service classes
                liningService.setSize(sizeFieldLining.getText());
@@ -234,7 +234,7 @@ public class BidSheetGUI extends JFrame {
                 //set bidsheet class  
                 sheet.setCustomerInfo(inputCustomerInfo);
                 sheet.setWaterService(waterService);
-                sheet.setSewerService(sewerSerice);
+                sheet.setSewerService(sewerService);
                 sheet.setLiningService(liningService);
 
                 //set other fields
@@ -247,7 +247,7 @@ public class BidSheetGUI extends JFrame {
 
                 sheet.getLiningService().getSize();
 
-                //ADD CALL TO FUNCTION HERE AFTER FUNCTION IS CALLED, PROPOSAL DOC WILL OPEN
+                //ADD CALL TO REPLACE FUNCTION HERE
 
 
                 try {

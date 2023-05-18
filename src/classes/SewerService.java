@@ -2,7 +2,7 @@ package classes;
 
 public class SewerService {
     private String Size;
-    private String ApproxFeet;
+    private boolean Blvd;
     private boolean PropertyLine;
     private boolean CityMain;
 
@@ -14,12 +14,12 @@ public class SewerService {
         Size = size;
     }
 
-    public String getApproxFeet() {
-        return ApproxFeet;
+    public boolean isBlvd() {
+        return Blvd;
     }
 
-    public void setApproxFeet(String approxFeet) {
-        ApproxFeet = approxFeet;
+    public void setBlvd(Boolean blvd) {
+        Blvd = blvd;
     }
 
     public boolean isPropertyLine() {
