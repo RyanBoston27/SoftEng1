@@ -1,24 +1,24 @@
 package classes;
 
 public class SewerService {
-    private int Size;
-    private int ApproxFeet;
+    private String Size;
+    private String ApproxFeet;
     private boolean PropertyLine;
     private boolean CityMain;
 
-    public int getSize() {
+    public String getSize() {
         return Size;
     }
 
-    public void setSize(int size) {
+    public void setSize(String size) {
         Size = size;
     }
 
-    public int getApproxFeet() {
+    public String getApproxFeet() {
         return ApproxFeet;
     }
 
-    public void setApproxFeet(int approxFeet) {
+    public void setApproxFeet(String approxFeet) {
         ApproxFeet = approxFeet;
     }
 
@@ -39,7 +39,7 @@ public class SewerService {
     }
 
     public boolean hasData(){
-        if(Size > 0){
+        if(Size != ""){
             return true;
         }
         else{

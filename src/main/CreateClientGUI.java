@@ -133,7 +133,7 @@ class CreateClientGUI {
                     try {
                         SwingUtilities.invokeLater(new Runnable() {
                             public void run() {
-                                new BidSheetGUI().setVisible(true);
+                                new BidSheetGUI(customer).setVisible(true);
                             }
                         });
                     } catch (Exception r) {

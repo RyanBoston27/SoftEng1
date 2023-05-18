@@ -1,28 +1,28 @@
 package classes;
 
 public class WaterService {
-    private double Size;
-    private int ApproxFeet;
+    private String Size;
+    private String ApproxFeet;
     private boolean Drop;
     private boolean BackFlow;
-    private int AddHorizFeet;
+    private String AddHorizFeet;
     private boolean PropertyLine;
     private boolean Blvd;
     private boolean CityMain;
 
-    public double getSize() {
+    public String getSize() {
         return Size;
     }
 
-    public void setSize(double size) {
+    public void setSize(String size) {
         Size = size;
     }
 
-    public int getApproxFeet() {
+    public String getApproxFeet() {
         return ApproxFeet;
     }
 
-    public void setApproxFeet(int approxFeet) {
+    public void setApproxFeet(String approxFeet) {
         ApproxFeet = approxFeet;
     }
 
@@ -42,11 +42,11 @@ public class WaterService {
         BackFlow = backFlow;
     }
 
-    public int getAddHorizFeet() {
+    public String getAddHorizFeet() {
         return AddHorizFeet;
     }
 
-    public void setAddHorizFeet(int addHorizFeet) {
+    public void setAddHorizFeet(String addHorizFeet) {
         AddHorizFeet = addHorizFeet;
     }
 
@@ -75,7 +75,7 @@ public class WaterService {
     }
 
     public boolean hasData(){
-        if(Size > 0){
+        if(Size != ""){
             return true;
         }
         else{

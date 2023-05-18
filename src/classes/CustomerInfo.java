@@ -8,6 +8,19 @@ public class CustomerInfo {
     private String JobAddress;
     private String BillingAddress;
 
+    public CustomerInfo() { }
+
+    // Copy constructor
+    public CustomerInfo(CustomerInfo c) {
+        this.FirstName = c.FirstName;
+        this.LastName = c.LastName;
+        this.Date = c.Date;
+        this.Email = c.Email;
+        this.Phone = c.Phone;
+        this.JobAddress = c.JobAddress;
+        this.BillingAddress = c.BillingAddress;
+    }
+
     public String getFirstName() {
         return FirstName;
     }

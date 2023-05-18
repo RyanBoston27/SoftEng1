@@ -1,24 +1,24 @@
 package classes;
 
 public class LiningService {
-    private int Size;
-    private int ApproxFeet;
+    private String Size;
+    private String ApproxFeet;
     private boolean Excavate;
-    private int TransitionLiner;
+    private String TransitionLiner;
 
-    public int getSize() {
+    public String getSize() {
         return Size;
     }
 
-    public void setSize(int size) {
+    public void setSize(String size) {
         Size = size;
     }
 
-    public int getApproxFeet() {
+    public String getApproxFeet() {
         return ApproxFeet;
     }
 
-    public void setApproxFeet(int approxFeet) {
+    public void setApproxFeet(String approxFeet) {
         ApproxFeet = approxFeet;
     }
 
@@ -30,16 +30,16 @@ public class LiningService {
         Excavate = excavate;
     }
 
-    public int getTransitionLiner() {
+    public String getTransitionLiner() {
         return TransitionLiner;
     }
 
-    public void setTransitionLiner(int transitionLiner) {
+    public void setTransitionLiner(String transitionLiner) {
         TransitionLiner = transitionLiner;
     }
 
     public boolean hasData(){
-        if(Size > 0){
+        if(Size != ""){
             return true;
         }
         else{
