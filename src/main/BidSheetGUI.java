@@ -261,7 +261,5 @@ public class BidSheetGUI extends JFrame {
                 }
             }
         });
-        add(createBidSheetButton);
-
     }
 }
