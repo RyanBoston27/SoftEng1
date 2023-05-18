@@ -27,7 +27,7 @@ public void bidSheetCreate() throws IOException {
     BufferedReader reader = new BufferedReader(new FileReader(texFilePath));
 
     // Where To Save Generated LaTeX File
-    String newFilePath =  Paths.get(texFilePath).getParent().toString()+ "Output/" + sheet.getCustomerInfo().getEmail() + ".pdf";
+    String newFilePath =  Paths.get(texFilePath).getParent().toString().replace("\\", "/") + "Output/" + sheet.getCustomerInfo().getEmail() + ".pdf";
     
     // Handle Lines & Strings
     StringBuilder stringBuilder = new StringBuilder();

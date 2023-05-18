@@ -79,7 +79,7 @@ public class ProposalDocGUI extends JFrame {
                 sCost = sewerCostField.getText();
                 lDesc = liningDescriptionField.getText();
                 lCost = liningCostField.getText();
-                System.out.println(wDesc);
+                System.out.println("1");
                 if(wCost.isEmpty()){
                     wCost = "0";
                 }
@@ -103,6 +103,7 @@ public class ProposalDocGUI extends JFrame {
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
+            
                 dispose();
                 // Close current frame
                 // Open LandingPageGUI

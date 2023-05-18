@@ -32,13 +32,14 @@ public class ProposalDocGenerate{
     }
     
     public void proposalCreate() throws IOException {
-    
+        System.out.println("1");
         // Read LaTeX Template File
         BufferedReader reader = new BufferedReader(new FileReader(texFilePath));
     
         // Where To Save Generated LaTeX File
-        String newFilePath = Paths.get(texFilePath).getParent().toString() + "Output/" + sheet.getCustomerInfo().getEmail() + "proposal.pdf";
+        String newFilePath = Paths.get(texFilePath).getParent().toString().replace("\\", "/") + "Output/" + sheet.getCustomerInfo().getEmail() + "Prop.pdf";
     
+        System.out.println("2");
         // Handle Lines & Strings
         StringBuilder stringBuilder = new StringBuilder();
         String line;
@@ -61,6 +62,7 @@ public class ProposalDocGenerate{
             if (line.contains("!CBADDRESS!")) {
                 line = line.replaceAll("!CBADDRESS!", sheet.getCustomerInfo().getBillingAddress());
             }
+            System.out.println("-");
     
             // Service Information
             if (line.contains("!WDESC!")) {
@@ -84,25 +86,33 @@ public class ProposalDocGenerate{
             if (line.contains("!TOTAL!")) {
                 line = line.replaceAll("!TOTAL!", totalCost);
             }
+            System.out.println("/");
     
             stringBuilder.append(line).append(System.lineSeparator());
         }
+        System.out.println("5");
         reader.close();
     
         BufferedWriter writer = new BufferedWriter(new FileWriter(newFilePath));
     
         writer.write(stringBuilder.toString());
         writer.close();
-    
+        System.out.println("6");
         // Generate The PDF From The LaTeX File
-        latexToPDF(newFilePath);
+        System.out.println(texFilePath);
+        System.out.println(newFilePath);
+        bidSheetGenerate.latexToPDF(newFilePath);
+        System.out.println("Exit");
     }
     
-    public static int latexToPDF(String latexFilePath) {
+    public static int latexToPDFProp(String latexFilePath) {
+        System.out.println("1");
         try {
             String pdfLatexPath = System.getenv("APPDATA").replace("\\", "/").replace("Roaming", "") + "/Local/Programs/MiKTeX/miktex/bin/x64/pdflatex.exe";
             ProcessBuilder builder = new ProcessBuilder(pdfLatexPath, Paths.get(latexFilePath).getFileName().toString());
+            System.out.println("2");
             builder.directory(new File(Paths.get(latexFilePath).getParent().toString()));
+            System.out.println("3");
             Process process = builder.start();
             return process.waitFor(); // Wait for the command to finish and return the exit code
         } catch (IOException | InterruptedException e) {
@@ -110,5 +120,7 @@ public class ProposalDocGenerate{
             return -1; // Return -1 to indicate an error
         }
     }
-    }
+
+}
+
     
